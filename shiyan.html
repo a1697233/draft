@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="shiyan.css" rel="stylesheet" type="text/css" charset="utf-8"/>
+  <title>Hardware Simulator</title>
+  <h3 >The project of team 4 -- simulation of hardware simulator on a web page by using HTML and web worker</h3>
+<style>body {background-color: yellow;}</style>
+</head>
+
+<body>
+
+
+  <table id = "mytable" width = 600px border = 1 bordercolor = black cellspacing = 2 cellpadding = 2 >
+  <tr align = center><td colspan=7>Truth Table of simple gates</td></tr>
+  <tr align = center><td><button onmouseover = show("Not") onmouseout = show1("Not")>Not</td>
+    <td><button onmouseover = show("And") onmouseout = show1("And")>And</td>
+      <td><button onmouseover = show("Or") onmouseout = show1("Or")>Or</td>
+        <td><button onmouseover = show("Xor") onmouseout = show1("Xor")>Xor</td>
+          <td><button onmouseover = show("Nand") onmouseout = show1("Nand")>Nand</td>
+           <td><button onmouseover = show("Mux") onmouseout = show1("Mux")>Mux</td>
+            <td><button onmouseover = show("DMux") onmouseout = show1("DMux")>DMux</td>
+              </tr>
+  <tr align = center><td colspan=10><img src='img/Not.jpg' style='display:none' id='Not' />
+                                  <img src='img/And.jpg' style='display:none' id='And' />
+                                <img src='img/Or.jpg' style='display:none' id='Or' />
+                              <img src='img/Xor.jpg' style='display:none' id='Xor' />
+                            <img src='img/Nand.jpg' style='display:none' id='Nand' />
+                          <img src='img/Mux.jpg' style='display:none' id='Mux' />
+                        <img src='img/DMux.jpg' style='display:none' id='DMux' />
+                      </td></tr>
+  </table><br/>
+
+<form>
+&nbsp &nbsp &nbsp Select the target gate you want to build:
+
+<select id = "myList" onchange="favgates()">
+  <option>Logic Gates:</option>
+
+  <option>Not</option>
+  <option>Not16</option>
+  <option>Nand</option>
+  <option>And</option>
+  <option>And16</option>
+
+  <option>Mux</option>
+  <option>Mux16</option>
+  <option>Mux4way16</option>
+  <option>Mux8way16</option>
+
+  <option>Dmux</option>
+  <option>Dmux4way</option>
+  <option>Dmux8way</option>
+
+  <option>Or</option>
+  <option>Or8way</option>
+  <option>Or16</option>
+  <option>Xor</option>
+</select>
+<p>&nbsp &nbsp &nbsp The target gate is: <input type="text" id="favorite" size = "10" align = "center"></p>
+
+</form>
+
+<form id="myForm">
+     &nbsp &nbsp &nbsp a= <input placeholder="binary" id = "num-one" size = "5"> , b= <input placeholder="binary" id = "num-two" size = "5">,
+                        in=  <input placeholder="binary" id = "num-three" size = "5">
+     &nbsp &nbsp &nbsp <button onclick="myFunction()">Calculate</button>
+     &nbsp out: <text id = "add-sum"></text>
+
+     &nbsp &nbsp  <input type = "button" onclick = "formReset()" value = "Reset">
+</form>
+
+</body>
+
+<script src ="shiyan.js"></script>
+
+</html>
